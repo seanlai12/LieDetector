@@ -1,19 +1,19 @@
-
-
 <html>
 <head>
+<img src="https://lh4.ggpht.com/l_X-f-SDZbBTyOEeGZay9VZTakd9VyJMEoptMY4jDmJY39gnY7hJcMzlFPPbTjd9rw=w300" alt="Mountain View" style="width:250px;height:250px;">
+
 <textarea rows="4" cols="50">
- 
 </textarea>
 
 
 <p>Please write something about yourself in the text box above. We will determine if it's a lie or not.</p>
-<button onclick="myFunction()">Check</button>
-
+<button onclick="move()">Check</button>
+<h1> This program is the result of 32 years of research from MIT's AI Spec program. It is currently being used to fight terrorism and drug dealers. Donations wull help fight the good fight. </h1>
 <p id="demo"></p>
 
 <script>
-function myFunction() {
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
+function calculate() {
 	if(Math.floor((Math.random() * 100) + 1) > 50)
 	{
     document.getElementById("demo").innerHTML = "Lie Detected";
@@ -22,15 +22,70 @@ function myFunction() {
 	{
 	document.getElementById("demo").innerHTML = "Truth Detected";	
 	}
-}	
+}
+function move() {
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+         	var element = document.getElementById("myProgress");
+			element.parentNode.removeChild(element);
+			if(Math.floor((Math.random() * 100) + 1) > 50)
+			{
+    		document.getElementById("demo").innerHTML = "Lie Detected";
+			}
+			else
+			{
+			document.getElementById("demo").innerHTML = "Truth Detected";	
+			}
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
+    }
+}
+	
+
+
 </script>
+<div id="target" style="display: none">
+    Hide show.....
+</div>
+<!-- <button onclick="location.href = 'http://www.paypal.com';" id="myButton" class="float-left submit-button" >Donate</button> -->
+
+
+<div id="myProgress">
+  <div id="myBar">
+    <div id="label">Loading...</div>
+  </div>
+</div>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="Try Again!">
 </head>
 </html>
 
 <style>
-p, button, textarea {
+p, button, textarea ,img {
     display: block;
     margin: auto;
     width: 40%;
+}
+img {
+	padding: 0px 20px 20px 20px;
+}
+
+#myProgress {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: grey;
+}
+#myBar {
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    background-color: green;
 }
 </style>
