@@ -1,5 +1,36 @@
+
+
 <html>
 <head>
-Fuck
+<textarea rows="4" cols="50">
+ 
+</textarea>
+
+
+<p>Please write something about yourself in the text box above. We will determine if it's a lie or not.</p>
+<button onclick="myFunction()">Check</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+	if(Math.floor((Math.random() * 100) + 1) > 50)
+	{
+    document.getElementById("demo").innerHTML = "Lie Detected";
+	}
+	else
+	{
+	document.getElementById("demo").innerHTML = "Truth Detected";	
+	}
+}	
+</script>
 </head>
 </html>
+
+<style>
+p, button, textarea {
+    display: block;
+    margin: auto;
+    width: 40%;
+}
+</style>
