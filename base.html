@@ -1,6 +1,6 @@
 <html>
 <head>
-<img src="https://lh4.ggpht.com/l_X-f-SDZbBTyOEeGZay9VZTakd9VyJMEoptMY4jDmJY39gnY7hJcMzlFPPbTjd9rw=w300" alt="Mountain View" style="width:250px;height:250px;">
+<img src="https://lh4.ggpht.com/l_X-f-SDZbBTyOEeGZay9VZTakd9VyJMEoptMY4jDmJY39gnY7hJcMzlFPPbTjd9rw=w300" style="width:250px;height:250px;">
 
 <textarea rows="4" cols="50">
 </textarea>
@@ -28,7 +28,7 @@ function calculate() {
 function move() {
     var elem = document.getElementById("myBar"); 
     var width = 0;
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 50);
 
     function frame() {
         if (width >= 100) {
@@ -43,9 +43,31 @@ function move() {
 			{
 			document.getElementById("truth").innerHTML = "Truth Detected";	
 			}
+
         } else {
             width++; 
             elem.style.width = width + '%'; 
+            if(width > 10 && width < 20)
+            {
+            document.getElementById("label").innerHTML = "BWEEP bip bip BWEEP bip bip";
+        	}
+        	else if (width > 25 && width < 50)
+        	{
+        	document.getElementById("label").innerHTML = "++Running Scan.. Please wait..++";
+        	}
+        	else if (width > 50 && width < 70)
+        	{
+        	document.getElementById("label").innerHTML = "BEEP BEEP dakka dakka BEEP BEEP";
+        	}
+        	else if (width > 70 && width < 85)
+        	{
+        	document.getElementById("label").innerHTML = "eeeoooeeeooo eeeoooeeeooo";
+        	}
+        	else if (width > 85)
+        	{
+        	document.getElementById("label").innerHTML = "++Scan Complete.. Printing results..++";
+        	}
+
         }
     }
 }
@@ -61,7 +83,7 @@ function move() {
 
 <div id="myProgress">
   <div id="myBar">
-    <div id="label"><font face="Comic Sans MS" size="3" color="white">Loading...</font></div>
+    <div id="label">Loading...</div>
   </div>
 </div>
 <INPUT TYPE="button" onClick="history.go(0)" VALUE="Try Again!">
@@ -77,7 +99,11 @@ p, button, textarea ,img {
 img {
 	padding: 0px 20px 20px 20px;
 }
-
+#label{
+	font-family: "Comic Sans MS", Comic, serif;
+	size: 3;
+	color: white;
+}
 #lie{
 	color: red;
 	font-family: "Comic Sans MS", Comic, serif;
