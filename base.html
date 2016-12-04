@@ -8,24 +8,26 @@
 
 <p>Please write something about yourself in the text box above. We will determine if it's a lie or not.</p>
 <button onclick="move()">Check</button>
-<h1> This program is the result of 32 years of research from MIT's AI Spec program. It is currently being used to fight terrorism and drug dealers. Donations wull help fight the good fight. </h1>
-<p id="demo"></p>
+<h1><font face="Comic Sans MS" size="5">This program is the result of 5 years of research from MIT's AI Spec program. It is currently being used to fight terrorism and drug dealers. Donations will help fight the good fight. </font></h1>
+<h1 id="lie"> <font color="red"></font></h1>
+<h1 id="truth"> <font color="red"></font></h1>
 
 <script>
 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"
 function calculate() {
 	if(Math.floor((Math.random() * 100) + 1) > 50)
 	{
-    document.getElementById("demo").innerHTML = "Lie Detected";
+    document.getElementById("lie").innerHTML = "Lie Detected";
 	}
 	else
 	{
-	document.getElementById("demo").innerHTML = "Truth Detected";	
+	document.getElementById("truth").innerHTML = "Truth Detected";	
 	}
 }
+
 function move() {
     var elem = document.getElementById("myBar"); 
-    var width = 1;
+    var width = 0;
     var id = setInterval(frame, 10);
 
     function frame() {
@@ -35,11 +37,11 @@ function move() {
 			element.parentNode.removeChild(element);
 			if(Math.floor((Math.random() * 100) + 1) > 50)
 			{
-    		document.getElementById("demo").innerHTML = "Lie Detected";
+    		document.getElementById("lie").innerHTML = "Lie Detected";
 			}
 			else
 			{
-			document.getElementById("demo").innerHTML = "Truth Detected";	
+			document.getElementById("truth").innerHTML = "Truth Detected";	
 			}
         } else {
             width++; 
@@ -59,7 +61,7 @@ function move() {
 
 <div id="myProgress">
   <div id="myBar">
-    <div id="label">Loading...</div>
+    <div id="label"><font face="Comic Sans MS" size="3" color="white">Loading...</font></div>
   </div>
 </div>
 <INPUT TYPE="button" onClick="history.go(0)" VALUE="Try Again!">
@@ -76,16 +78,24 @@ img {
 	padding: 0px 20px 20px 20px;
 }
 
+#lie{
+	color: red;
+	font-family: "Comic Sans MS", Comic, serif;
+}
+#truth{
+	color: green;
+	font-family: "Comic Sans MS", Comic, serif;
+}
 #myProgress {
     position: relative;
     width: 100%;
     height: 30px;
-    background-color: grey;
+    background-color: black;
 }
 #myBar {
     position: absolute;
     width: 1%;
     height: 100%;
-    background-color: green;
+    background-color: #76A95D;
 }
 </style>
